@@ -25,6 +25,11 @@ module VLC
         connection.write(media.nil? ? "play" : "add #{media_arg(media)}")
       end
       
+      # Enqueue into playlist
+      def enqueue(media)
+        connection.write("enqueue #{media_arg(media)}")
+      end
+      
       # Clears the playlist
       def clear
         connection.write("clear")
