@@ -24,6 +24,11 @@ module VLC
       def play(media = nil)
         connection.write(media.nil? ? "play" : "add #{media_arg(media)}")
       end
+      
+      # Clears the playlist
+      def clear
+        connection.write("clear")
+      end
 
       # Pauses playback
       def pause
